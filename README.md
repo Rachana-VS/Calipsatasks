@@ -14,20 +14,22 @@ This also contains Docker file to build webapp image. Container start can auto-s
 Go_Webapp instructions - 
 
 To run go application - 
-go run calipsa_goapp.go
+`go run calipsa_goapp.go`
 
 To check the Web app - 
 Sorted header file output can be obtained in http://localhost:8080
+
 A simple hello app output can be obtained in http://localhost:8080/hello
 
 To run Dockerfile - 
-$ docker run -it golang:1.15.8-alpine3.13 bash
-$ docker build -t calipsa-go .
+$ `docker run -it golang:1.15.8-alpine3.13 bash`
+
+$ `docker build -t calipsa-go .`
 
 Helm chart instructions -
 
 To run helm chart - 
 
-$ export POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=cherry-awesome-app,app.kubernetes.io/instance=my-helm-chart" -o jsonpath="{.items[0].metadata.name}")
+$ `export POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=cherry-awesome-app,app.kubernetes.io/instance=my-helm-chart" -o jsonpath="{.items[0].metadata.name}")`
 
-$ kubectl port-forward $POD_NAME 8080:80
+$ `kubectl port-forward $POD_NAME 8080:80`
